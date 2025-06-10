@@ -1,0 +1,34 @@
+<%- include('partials/header', { username: username }) %>
+
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-md-6 p-4 bg-white border rounded shadow-sm">
+    <h2 class="text-center mb-4">Add New Employee</h2>
+    <form method="POST" action="/add">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input
+          type="number"
+          name="age"
+          class="form-control"
+          required
+          min="18"
+          max="100"
+        />
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-success me-2">Add</button>
+        <a href="/" class="btn btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

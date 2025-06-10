@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+<style>
+  body {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gk11TobT6JYFEMLSdJF28NUInGlARTj_aw&s")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .register-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<div
+  class="container d-flex justify-content-center align-items-center"
+  style="min-height: 100vh"
+>
+  <div class="col-md-6 register-card">
+    <h3 class="text-center mb-4">Register</h3>
+    <% if (error) { %>
+    <div class="alert alert-danger text-center"><%= error %></div>
+    <% } %>
+    <form method="POST" action="/register">
+      <div class="mb-3">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="name" required />
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" required />
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" name="password" required />
+      </div>
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
